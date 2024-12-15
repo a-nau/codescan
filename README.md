@@ -15,7 +15,7 @@ If you use the code of our paper for scientific research, please consider citing
 	author       = {Naumann, Alexander and Hertlein, Felix and  Höllig, Jacqueline and Cazzonelli, Lucas and Thoma, Steffen},
 	booktitle    = {Proceedings of the International Joint Conference on Computer Vision Theory and Applications (VISAPP) 2025},
 	year         = {2025},
-    note         = {To appear in}
+	note         = {To appear in}
 }
 ```
 
