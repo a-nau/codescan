@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Dataset and approaches for video programming tutorial analysis"
+    />
+    <meta name="keywords" content="CodeSCAN" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeSCAN: ScreenCast ANalysis for Video Programming Tutorials</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      // gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="./static/css/bootstrap-icons/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fonts.css" />
+    <link rel="stylesheet" href="./static/css/academicons.min.css" />
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <link rel="icon" href="./static/images/favicon.ico" />
+
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <!--  Own -->
+    <script
+      defer
+      src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css"
+    />
+
+    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">CodeSCAN</h1>
+              <h1 class="title is-2 publication-title">
+                ScreenCast ANalysis for Video Programming Tutorials
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://a-nau.github.io" target="_blank">
+                    Alexander Naumann</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://www.fzi.de/team/felix-hertlein/"
+                    target="_blank"
+                  >
+                    Felix Hertlein</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://www.fzi.de/team/jacqueline-hoellig/"
+                    target="_blank"
+                  >
+                    Jacqueline Höllig</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://www.fzi.de/team/lucas-cazzonelli/"
+                    target="_blank"
+                  >
+                    Lucas Cazzonelli</a
+                  >
+                </span>
+                <span class="author-block">
+                  and
+                  <a
+                    href="https://www.fzi.de/team/steffen-thoma/"
+                    target="_blank"
+                  >
+                    Steffen Thoma</a
+                  >
+                </span>
+              </div>
+
+              <div class="is-size-6 publication-authors">
+                <span class="author-block">
+                  FZI Research Center for Information Technology, Karlsruhe,
+                  Germany
+                </span>
+                <br />
+                <span class="author-block">
+                  Karlsruhe Institute of Technology (KIT), Karlsruhe, Germany
+                </span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a
+                      href="http://arxiv.org/abs/2409.18556"
+                      class="external-link button is-normal is-rounded is-dark"
+                      target="_blank"
+                    >
+                      <span class="icon">
+                        <i class="bi bi-file-text"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/a-nau/codescan"
+                      class="external-link button is-normal is-rounded is-dark"
+                      target="_blank"
+                    >
+                      <span class="icon">
+                        <i class="bi bi-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <!-- Dataset Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://zenodo.org/records/10939237"
+                      class="external-link button is-normal is-rounded is-dark"
+                      target="_blank"
+                    >
+                      <span class="icon">
+                        <i class="bi bi-images"></i>
+                      </span>
+                      <span>Data</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Programming tutorials in the form of coding screencasts play a
+                crucial role in programming education, serving both novices and
+                experienced developers. However, the video format of these
+                tutorials presents a challenge due to the difficulty of
+                searching for and within videos.
+              </p>
+              <p>
+                Addressing the absence of large-scale and diverse datasets for
+                screencast analysis, we introduce the CodeSCAN dataset. It
+                comprises 12,000 screenshots captured from the Visual Studio
+                Code environment during development, featuring 24 programming
+                languages, 25 fonts, and over 90 distinct themes, in addition to
+                diverse layout changes and realistic user interactions.
+              </p>
+              <p>
+                Moreover, we conduct detailed quantitative and qualitative
+                evaluations to benchmark the performance of Integrated
+                Development Environment (IDE) element detection,
+                color-to-black-and-white conversion, and Optical Character
+                Recognition (OCR). We hope that our contributions facilitate
+                more research in coding screencast analysis, and we make the
+                source code for creating the dataset and the benchmark publicly
+                available on this website.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+        <div class="column is-centered">
+          <h2 class="title is-4">Dataset Details</h2>
+
+          Currently, there is no big and fully annotated datasets publicly
+          available. Bao et al. [1] provide a dataset, however, the annotations
+          are currently not publicly available. Bergh et al. [2] published the,
+          to the best of our knowledge, only dataset that is available. They
+          focus on Python and Java and only classify images according to their
+          content (i.e. no code, handwritten code, visible typset code and
+          partially visible typeset code). <br />
+          <br />
+          Our dataset was scraped from
+          <a href="https://github.dev">github.dev</a> using Selenium.
+
+          <div class="content has-text-justified">
+            <ul>
+              <li>24 popular programming languages (according to Github)</li>
+              <li>
+                100 random repositories per language (with MIT, BSD-3 or WTFPL
+                License), i.e. 2.400 repositories in total
+              </li>
+              <li>Per repository we use 5 files, i.e. 12.000 files in total</li>
+              <li>100 different themes and 25 different fonts</li>
+              <li>
+                Diverse layouts changes, such as menu bar visibility, sidebar
+                position, output window content, etc.
+              </li>
+              <li>
+                Numerous realistic interactions such as searching, typing and
+                selecting within a file, etc.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div class="rows is-centered has-text-centered">
+            <div>
+              <h3 class="title is-4" style="margin-bottom: 10px">
+                Annotations
+              </h3>
+            </div>
+            <div class="content has-text-centered">
+              <p>
+                We can retrieve any type of visual annotations automatically.<br />
+                Currently, we annotate: sidebar, active tab, output panel, code
+                line number bar, coding grid (character width and line height),
+                etc.<br />
+              </p>
+            </div>
+            <div>
+              <img-comparison-slider style="width: 80%">
+                <img
+                  slot="first"
+                  src="static/images/full_annos/img1/base.png"
+                />
+                <img
+                  slot="second"
+                  src="static/images/full_annos/img1/annotated.png"
+                />
+              </img-comparison-slider>
+            </div>
+
+            <div>
+              <h3
+                class="title is-4"
+                style="margin-bottom: 10px; margin-top: 30px"
+              >
+                Binary Image
+              </h3>
+            </div>
+            <div class="content has-text-centered">
+              <p>
+                We have a high quality binary image for each screenshot, which
+                is an ideal input for OCR engines.
+              </p>
+            </div>
+            <div>
+              <img-comparison-slider style="width: 80%">
+                <img
+                  slot="first"
+                  src="static/images/full_annos/img3/base.png"
+                />
+                <img slot="second" src="static/images/full_annos/img3/bw.png" />
+              </img-comparison-slider>
+            </div>
+          </div>
+          <div class="rows is-centered has-text-centered">
+            <div>
+              <h3
+                class="title is-4"
+                style="margin-bottom: 10px; margin-top: 30px"
+              >
+                Gallery
+              </h3>
+            </div>
+            <div class="content has-text-centered">
+              <p>Randomly sampled impressions from the dataset.</p>
+            </div>
+
+            <div class="content demo-gallery">
+              <ul id="lightgallery">
+                <li
+                  data-src="static/images/gallery/img_00.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_00.png"
+                      height="100px"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_01.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_01.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_02.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_02.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_03.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_03.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_04.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_04.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_05.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_05.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_06.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_06.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_07.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_07.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_08.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_08.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="static/images/gallery/img_09.png"
+                  data-sub-html=""
+                >
+                  <a href="">
+                    <img
+                      class="img-responsive"
+                      src="static/images/gallery/img_09.png"
+                    />
+                    <div class="demo-gallery-poster">
+                      <img
+                        src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png"
+                      />
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Concurrent Work. -->
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <br />
+            <div class="content">
+              <h4 class="title is-4">References</h4>
+              [1] Bao, Lingfeng, Zhenchang Xing, Xin Xia, David Lo, Minghui Wu,
+              and Xiaohu Yang. “Psc2code: Denoising Code Extraction from
+              Programming Screencasts.” ACM Transactions on Software Engineering
+              and Methodology 29, no. 3 (July 31, 2020): 1–38.
+              <a href="https://doi.org/10.1145/3392093"
+                >https://doi.org/10.1145/3392093</a
+              >.
+              <br />
+              <br />
+              [2] Bergh, Adrienne, Paul Harnack, Abigail Atchison, Jordan Ott,
+              Elia Eiroa-Lledo, and Erik Linstead. “A Curated Set of Labeled
+              Code Tutorial Images for Deep Learning.” In 2020 19th IEEE
+              International Conference on Machine Learning and Applications
+              (ICMLA), 1276–80, 2020.
+              <a href="https://doi.org/10.1109/ICMLA51294.2020.00200"
+                >https://doi.org/10.1109/ICMLA51294.2020.00200</a
+              >.
+              <br />
+            </div>
+          </div>
+        </div>
+        <!--/ Concurrent Work. -->
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <!--        <div class="content has-text-centered">-->
+        <!--            <a class="icon-link"-->
+        <!--               href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">-->
+        <!--                <i class="fas fa-file-pdf"></i>-->
+        <!--            </a>-->
+        <!--            <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>-->
+        <!--                <i class="fab fa-github"></i>-->
+        <!--            </a>-->
+        <!--        </div>-->
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p style="text-align: center">
+                This website template is borrowed from
+                <a href="https://github.com/nerfies/nerfies.github.io"
+                  >https://nerfies.github.io</a
+                >
+              </p>
+              <p style="text-align: center">© Alexander Naumann, 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      lightGallery(document.getElementById("lightgallery"));
+    </script>
+  </body>
+</html>
