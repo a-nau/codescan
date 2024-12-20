@@ -2,8 +2,8 @@
 
 # CodeSCAN: ScreenCast ANalysis for Video Programming Tutorials
 
-This is the repository for the [project page](https://a-nau.github.io/parcel2d/) of
-our [paper](https://arxiv.org/abs/2210.09814).
+This is the repository for the [project page](https://a-nau.github.io/codescan/) of
+our [paper](https://arxiv.org/abs/2409.18556).
 
 ## Citation
 
